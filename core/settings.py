@@ -25,7 +25,17 @@ SECRET_KEY = 'django-insecure-#iam1$%bdn-z+bx-02m=4s0)hz=)5hrxc-j^0+-sc%b8p#mpv8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://examplePublicKey@o0.ingest.sentry.io/0",  # Remplacez par votre DSN réel
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', '.up.railway.app']
 
 
 # Application definition
