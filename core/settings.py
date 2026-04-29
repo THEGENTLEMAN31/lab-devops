@@ -29,7 +29,7 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
 sentry_sdk.init(
-    dsn="https://examplePublicKey@o0.ingest.sentry.io/0",  # Remplacez par votre DSN réel
+    dsn="https://f321ebf271248d73495c6ea50b8afd8f@o4511304025112576.ingest.de.sentry.io/4511304357314640",  # Votre DSN réel
     integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
     send_default_pii=True
